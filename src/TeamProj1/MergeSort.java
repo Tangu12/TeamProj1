@@ -12,6 +12,12 @@ package TeamProj1;
 
         public static void mergesort(int[] inputArray) {
         int inputLength = inputArray.length;
+
+        int[] copyArray = new int[inputLength];
+
+        System.arraycopy(inputArray, 0, copyArray, 0, inputArray.length);
+
+
         if (inputLength < 2) {
             return;
         }
@@ -23,15 +29,15 @@ package TeamProj1;
 
 
         for (int i = 0; i < midIndex; i++) {
-            leftHalf[i] = inputArray[i];
+            leftHalf[i] = copyArray[i];
         }
         for (int i = 0; i < inputLength - midIndex; i++) { // test this for loop
-            rightHalf[i] = inputArray[midIndex + i];
+            rightHalf[i] = copyArray[midIndex + i];
         }
         mergesort(leftHalf);
         mergesort(rightHalf);
         // Merging
-        merge(inputArray, leftHalf, rightHalf);
+        merge(copyArray, leftHalf, rightHalf);
         }
 
         private static void merge(int[] inputArray, int[] leftHalf, int[] rightHalf) {

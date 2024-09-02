@@ -5,19 +5,22 @@ public class HybridSort {
     static long hybridComparisions = 0;
 
 
-
     public static void printhybridComparisions() {
         System.out.println(hybridComparisions);
     }
 
-
     public static void hybridsort(int[] inputArray, int S) {
         int inputLength = inputArray.length;
+
+        int[] copyArray = new int[inputLength];
+
+        System.arraycopy(inputArray, 0, copyArray, 0, inputArray.length);
+
         if (inputLength < 2) {
             return;
         }
         else if  (inputLength <= S) {
-            insertionsort(inputArray);
+            insertionsort(copyArray);  //inputArray
             return;
         }
 
@@ -27,17 +30,17 @@ public class HybridSort {
 
 
         for (int i = 0; i < midIndex; i++) {
-            leftHalf[i] = inputArray[i];
+            leftHalf[i] = copyArray[i];
         }
         for (int i = 0; i < inputLength - midIndex; i++) { // test this for loop
-            rightHalf[i] = inputArray[midIndex + i];
+            rightHalf[i] = copyArray[midIndex + i];
         }
 
         hybridsort(leftHalf, S);
         hybridsort(rightHalf, S);
 
         // Merging
-        merge(inputArray, leftHalf, rightHalf);
+        merge(copyArray, leftHalf, rightHalf);
     }
 
 

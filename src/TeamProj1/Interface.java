@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Interface {
     public static void main(String[] args) {
-        int x = 10000;
-        int S = 100;
-        int size = 10000000;
+        int x = 100;
+        int S = 0;
+        int size = 10;
         Random rand = new Random();
         int[] numbers = new int[size];
 
@@ -16,14 +16,14 @@ public class Interface {
             numbers[i] = rand.nextInt(x);
         }
 
-        //Before:
-//        System.out.println("Unsorted version");
-//        for (int i = 0; i < size; i++) {
-//            System.out.println(numbers[i]);
-////            System.out.println(Arrays.toString(numbers));
-//        }
+        Before:
+        System.out.println("Unsorted version");
+        for (int i = 0; i < size; i++) {
+            System.out.println(numbers[i]);
+//            System.out.println(Arrays.toString(numbers));
+        }
 
-        //System.out.println("End of unsorted version\n");
+        System.out.println("End of unsorted version\n");
 
         long mergeStart = System.nanoTime();
         MergeSort.mergesort(numbers);
@@ -31,25 +31,27 @@ public class Interface {
         double mergeElapsedTime = (double)((mergeEnd - mergeStart)) / 1000000000;
 
 
-        long hybridStart = System.nanoTime();
-        HybridSort.hybridsort(numbers, S);
-        long hybridEnd = System.nanoTime();
-        double hybridElapsedTime = (double)((hybridEnd - hybridStart)) / 1000000000;
+//        long hybridStart = System.nanoTime();
+//        HybridSort.hybridsort(numbers, S);
+//        long hybridEnd = System.nanoTime();
+//        double hybridElapsedTime = (double)((hybridEnd - hybridStart)) / 1000000000;
 
 
-        //System.out.println("Sorted version");
-        //After:
-//        for (int i = 0; i < size; i++) {
-//            System.out.println(numbers[i]);
-//        };
-//        System.out.println("End of sorted version");
+        System.out.println("Sorted version");
+        After:
+        for (int i = 0; i < size; i++) {
+            System.out.println(numbers[i]);
+        };
+        System.out.println("End of sorted version");
+
+
 
         System.out.print("The number of comparisons for Mergesort is ");
-        HybridSort.printhybridComparisions();
-        System.out.println("Time taken: " + mergeElapsedTime + "s");
-        System.out.print("The number of comparisons for Hybridsort is ");
         MergeSort.printCounter();
-        System.out.println("Time taken: " + hybridElapsedTime + "s");
+        System.out.println("Time taken: " + mergeElapsedTime + "s");
+//        System.out.print("The number of comparisons for Hybridsort is ");
+//        HybridSort.printhybridComparisions();
+//        System.out.println("Time taken: " + hybridElapsedTime + "s");
 
 //        HybridSort.printhybridComparisions();
 //        HybridSort.insertionsort(new int[]{1,2,3,4,5,6,7,8,9});
