@@ -31,10 +31,10 @@ public class Interface {
         double mergeElapsedTime = (double)((mergeEnd - mergeStart)) / 1000000000;
 
 
-//        long hybridStart = System.nanoTime();
-//        HybridSort.hybridsort(numbers, S);
-//        long hybridEnd = System.nanoTime();
-//        double hybridElapsedTime = (double)((hybridEnd - hybridStart)) / 1000000000;
+        long hybridStart = System.nanoTime();
+        HybridSort.hybridsort(numbers, S);
+        long hybridEnd = System.nanoTime();
+        double hybridElapsedTime = (double)((hybridEnd - hybridStart)) / 1000000000;
 
 
         System.out.println("Sorted version");
@@ -45,13 +45,22 @@ public class Interface {
         System.out.println("End of sorted version");
 
 
-
+        // Create function for using test cases:
         System.out.print("The number of comparisons for Mergesort is ");
         MergeSort.printCounter();
+        MergeSort.reset();
+        // Test reset:
+        MergeSort.printCounter();
         System.out.println("Time taken: " + mergeElapsedTime + "s");
-//        System.out.print("The number of comparisons for Hybridsort is ");
-//        HybridSort.printhybridComparisions();
-//        System.out.println("Time taken: " + hybridElapsedTime + "s");
+
+        // Create function for using test cases:
+        System.out.print("The number of comparisons for Hybridsort is ");
+        HybridSort.printhybridComparisions();
+        HybridSort.reset();
+        // Test reset:
+        HybridSort.printhybridComparisions();
+        System.out.println("Time taken: " + hybridElapsedTime + "s");
+
 
 //        HybridSort.printhybridComparisions();
 //        HybridSort.insertionsort(new int[]{1,2,3,4,5,6,7,8,9});

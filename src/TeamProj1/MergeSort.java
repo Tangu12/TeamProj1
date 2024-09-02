@@ -9,6 +9,10 @@ package TeamProj1;
             System.out.println(counter);
         }
 
+        public static void reset() {
+            counter = 0;
+        }
+
 
         public static void mergesort(int[] inputArray) {
         int inputLength = inputArray.length;
