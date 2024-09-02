@@ -24,7 +24,7 @@ public class Interface {
         System.out.println("End of unsorted version\n");
 
         MergeSort.mergesort(numbers);
-        //HybridSort.hybridsort(numbers, S);
+        HybridSort.hybridsort(numbers, S);
 
         System.out.println("Sorted version");
         //After:
@@ -34,12 +34,17 @@ public class Interface {
         System.out.println("End of sorted version");
 
         System.out.println("The number of comparisons for Mergesort is ");
-        //HybridSort.printhybridComparisions();
+        HybridSort.printhybridComparisions();
         System.out.print("The number of comparisons for Hybridsort is ");
         MergeSort.printCounter();
 
+//        HybridSort.printhybridComparisions();
+//        HybridSort.insertionsort(new int[]{1,2,3,4,5,6,7,8,9});
+//        HybridSort.insertionsort(new int[]{1, 9, 5, 13, 3, 11, 7, 15, 2, 10, 6, 14, 4, 12, 8, 16});
+//        HybridSort.hybridsort(new int[]{1, 9, 5, 13, 3, 11, 7, 15, 2, 10, 6, 14, 4, 12, 8, 16},5);
+//        HybridSort.printhybridComparisions();
+//        MergeSort.mergesort(new int[]{1, 9, 5, 13, 3, 11, 7, 15, 2, 10, 6, 14, 4, 12, 8, 16});
+//        MergeSort.printCounter();
 
-        HybridSort.hybridsort(new int[]{1, 9, 5, 13, 3, 11, 7, 15, 2, 10, 6, 14, 4, 12, 8, 16}, 4);
-        HybridSort.printhybridComparisions();
     }
 }

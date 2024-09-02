@@ -17,6 +17,7 @@ public class HybridSort {
         }
         else if  (inputLength <= S) {
             insertionsort(inputArray);
+            return;
         }
 
         int midIndex = inputLength / 2;
@@ -76,12 +77,13 @@ public class HybridSort {
     public static void insertionsort(int[] inputArray) {
         for (int i = 1; i < inputArray.length; i++) {
             for (int j = i; j > 0; j--) {
-                if (inputArray[j] > inputArray[j-1]){
+                hybridComparisions++;
+                if (inputArray[j] < inputArray[j-1]){
                     int temp = inputArray[j];
                     inputArray[j] = inputArray[j-1];
                     inputArray[j-1] = temp;
                 }
-                hybridComparisions++;
+                else break;
             }
         }
     }
