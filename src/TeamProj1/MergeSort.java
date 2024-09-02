@@ -2,7 +2,7 @@ package TeamProj1;
 
     public class MergeSort {
 
-        static int counter = 0;
+        static long counter = 0;
 
 
         public static void printCounter() {

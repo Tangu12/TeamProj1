@@ -2,7 +2,8 @@ package TeamProj1;
 
 public class HybridSort {
 
-    static int hybridComparisions = 0;
+    static long hybridComparisions = 0;
+
 
 
     public static void printhybridComparisions() {
