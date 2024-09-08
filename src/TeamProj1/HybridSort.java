@@ -6,7 +6,7 @@ public class HybridSort {
 
 
     public static void printhybridComparisions() {
-        System.out.println(hybridComparisions);
+        System.out.print(hybridComparisions);
     }
 
 

@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Interface {
     public static void main(String[] args) {
-        int x = 1000;
-        int S = 10;
-        int size = 10000;
+        int x = 100;
+        int S = 100;
+        int size = 100000;
         Random rand = new Random();
         int[] numbers = new int[size];
 
@@ -54,21 +54,35 @@ public class Interface {
         System.out.println();
 
 
+//        long hybridStart = System.nanoTime();
+//        HybridSort.hybridsort(numbers, S);
+//        long hybridEnd = System.nanoTime();
+//        double hybridElapsedTime = (double)((hybridEnd - hybridStart)) / 1000000000;
+////        System.out.print("when i is " );
+////        System.out.println(S);
+//        System.out.print("The number of comparisons for Hybridsort is ");
+//        HybridSort.printhybridComparisions();
+//        HybridSort.reset();
+//        System.out.println("Time taken: " + hybridElapsedTime + "s");
+//        System.out.println();
+
+
+
+
         for (int i = 0; i <= 100; i++) {
             long hybridStart = System.nanoTime();
             HybridSort.hybridsort(numbers, i);
             long hybridEnd = System.nanoTime();
             double hybridElapsedTime = (double)((hybridEnd - hybridStart)) / 1000000000;
-            System.out.print("when i is " );
-            System.out.println(i);
-            System.out.print("The number of comparisons for Hybridsort is ");
+//            System.out.print("when i is " );
+            System.out.print(i);
+            System.out.print("  ");
+//            System.out.print("The number of comparisons for Hybridsort is ");
             HybridSort.printhybridComparisions();
+            System.out.print("  ");
             HybridSort.reset();
-            System.out.println("Time taken: " + hybridElapsedTime + "s");
-            System.out.println();
-
-
-
+//            System.out.println("Time taken: " + hybridElapsedTime + "s");
+            System.out.println(hybridElapsedTime);
         }
         // Create function for using test cases:
 
