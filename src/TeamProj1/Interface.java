@@ -7,8 +7,8 @@ import java.util.Random;
 public class Interface {
     public static void main(String[] args) {
         int x = 100;
-        int S = 100;
-        int size = 100000;
+        int S = 0;
+        int size = 10;
         Random rand = new Random();
         int[] numbers = new int[size];
 
@@ -16,14 +16,14 @@ public class Interface {
             numbers[i] = rand.nextInt(x);
         }
 
-//        Before:
-//        System.out.println("Unsorted version");
-//        for (int i = 0; i < size; i++) {
-//            System.out.println(numbers[i]);
+        Before:
+        System.out.println("Unsorted version");
+        for (int i = 0; i < size; i++) {
+            System.out.println(numbers[i]);
 //            System.out.println(Arrays.toString(numbers));
-//        }
-//
-//        System.out.println("End of unsorted version\n");
+        }
+
+        System.out.println("End of unsorted version\n");
 
         long mergeStart = System.nanoTime();
         MergeSort.mergesort(numbers);
@@ -37,62 +37,28 @@ public class Interface {
 //        double hybridElapsedTime = (double)((hybridEnd - hybridStart)) / 1000000000;
 
 
-//        System.out.println("Sorted version");
-//        After:
-//        for (int i = 0; i < size; i++) {
-//            System.out.println(numbers[i]);
-//        };
-//        System.out.println("End of sorted version");
+        System.out.println("Sorted version");
+        After:
+        for (int i = 0; i < size; i++) {
+            System.out.println(numbers[i]);
+        };
+        System.out.println("End of sorted version");
 
 
-        // Create function for using test cases:
+
         System.out.print("The number of comparisons for Mergesort is ");
         MergeSort.printCounter();
-        MergeSort.reset();
-        // Test reset:
         System.out.println("Time taken: " + mergeElapsedTime + "s");
-        System.out.println();
-
-
-//        long hybridStart = System.nanoTime();
-//        HybridSort.hybridsort(numbers, S);
-//        long hybridEnd = System.nanoTime();
-//        double hybridElapsedTime = (double)((hybridEnd - hybridStart)) / 1000000000;
-////        System.out.print("when i is " );
-////        System.out.println(S);
 //        System.out.print("The number of comparisons for Hybridsort is ");
 //        HybridSort.printhybridComparisions();
-//        HybridSort.reset();
 //        System.out.println("Time taken: " + hybridElapsedTime + "s");
-//        System.out.println();
 
-
-
-
-        for (int i = 0; i <= 100; i++) {
-            long hybridStart = System.nanoTime();
-            HybridSort.hybridsort(numbers, i);
-            long hybridEnd = System.nanoTime();
-            double hybridElapsedTime = (double)((hybridEnd - hybridStart)) / 1000000000;
-//            System.out.print("when i is " );
-            System.out.print(i);
-            System.out.print("  ");
-//            System.out.print("The number of comparisons for Hybridsort is ");
-            HybridSort.printhybridComparisions();
-            System.out.print("  ");
-            HybridSort.reset();
-//            System.out.println("Time taken: " + hybridElapsedTime + "s");
-            System.out.println(hybridElapsedTime);
-        }
-        // Create function for using test cases:
-
-
-
-
-
-
-
-
-
+//        HybridSort.printhybridComparisions();
+//        HybridSort.insertionsort(new int[]{1,2,3,4,5,6,7,8,9});
+//        HybridSort.insertionsort(new int[]{1, 9, 5, 13, 3, 11, 7, 15, 2, 10, 6, 14, 4, 12, 8, 16});
+//        HybridSort.hybridsort(new int[]{1, 9, 5, 13, 3, 11, 7, 15, 2, 10, 6, 14, 4, 12, 8, 16},5);
+//        HybridSort.printhybridComparisions();
+//        MergeSort.mergesort(new int[]{1, 9, 5, 13, 3, 11, 7, 15, 2, 10, 6, 14, 4, 12, 8, 16});
+//        MergeSort.printCounter();
     }
 }

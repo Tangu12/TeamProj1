@@ -14,6 +14,11 @@ public class HybridSort {
         hybridComparisions = 0;
     }
 
+
+    public static void reset() {
+        hybridComparisions = 0;
+    }
+
     public static void hybridsort(int[] inputArray, int S) {
         int inputLength = inputArray.length;
 
