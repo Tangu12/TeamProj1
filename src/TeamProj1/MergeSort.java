@@ -6,7 +6,7 @@ package TeamProj1;
 
 
         public static void printCounter() {
-            System.out.println(counter);
+            System.out.print(counter);
         }
 
         public static void reset() {
