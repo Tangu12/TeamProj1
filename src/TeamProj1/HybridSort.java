@@ -1,5 +1,7 @@
 package TeamProj1;
 
+import java.util.Arrays;
+
 public class HybridSort {
 
     static long hybridComparisions = 0;
@@ -14,18 +16,32 @@ public class HybridSort {
     }
 
 
+    public static void insertionsort(int[] inputArray) {
+        for (int i = 1; i < inputArray.length; i++) {
+            for (int j = i; j > 0; j--) {
+                hybridComparisions++;
+                if (inputArray[j] < inputArray[j-1]){
+                    int temp = inputArray[j];
+                    inputArray[j] = inputArray[j-1];
+                    inputArray[j-1] = temp;
+                }
+                else break;
+            }
+        }
+    }
+
     public static void hybridsort(int[] inputArray, int S) {
         int inputLength = inputArray.length;
 
-        int[] copyArray = new int[inputLength];
-
-        System.arraycopy(inputArray, 0, copyArray, 0, inputArray.length);
+//        int[] copyArray = new int[inputLength];
+//
+//        System.arraycopy(inputArray, 0, copyArray, 0, inputArray.length);
 
         if (inputLength < 2) {
             return;
         }
         else if  (inputLength <= S) {
-            insertionsort(copyArray);  //inputArray
+            insertionsort(inputArray);  //copyArray
             return;
         }
 
@@ -35,17 +51,17 @@ public class HybridSort {
 
 
         for (int i = 0; i < midIndex; i++) {
-            leftHalf[i] = copyArray[i];
+            leftHalf[i] = inputArray[i]; //copy
         }
         for (int i = 0; i < inputLength - midIndex; i++) { // test this for loop
-            rightHalf[i] = copyArray[midIndex + i];
+            rightHalf[i] = inputArray[midIndex + i]; //copy
         }
 
         hybridsort(leftHalf, S);
         hybridsort(rightHalf, S);
 
         // Merging
-        merge(copyArray, leftHalf, rightHalf);
+        merge(inputArray, leftHalf, rightHalf); //copyArray
     }
 
 
@@ -80,21 +96,8 @@ public class HybridSort {
             rightIndex++;
             mergedIndex++;
         }
+//        System.out.println(Arrays.toString(inputArray));
     }
 
-
-    public static void insertionsort(int[] inputArray) {
-        for (int i = 1; i < inputArray.length; i++) {
-            for (int j = i; j > 0; j--) {
-                hybridComparisions++;
-                if (inputArray[j] < inputArray[j-1]){
-                    int temp = inputArray[j];
-                    inputArray[j] = inputArray[j-1];
-                    inputArray[j-1] = temp;
-                }
-                else break;
-            }
-        }
-    }
 }
 
